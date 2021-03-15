@@ -47,7 +47,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
+  
 </nav>
+
+
+
 
 <main class="container">
   <div id="Upload" class="bg-light p-5 rounded">
@@ -79,11 +83,13 @@
       </div>
     </form>
 
+    <a href="https://github.com/jacojac-au/RosterOnShiftCalculator">Click Here for instructions</a>
+
 
 
   </div>
 
-  <table class="table table-hover" style="display: none;" id="queryTable">
+  <table class="table table-hover" style="display: none;" id="ShiftTable">
     <thead>
       <tr>
         <th>Shift Type</th>
@@ -180,7 +186,7 @@
     
           document.getElementById("Upload").remove();
           GetRoles(8)
-          document.getElementById("queryTable").style.display = "block";
+          document.getElementById("ShiftTable").style.display = "block";
     
     
         }
@@ -212,7 +218,7 @@
     
           document.getElementById("Upload").remove();
           GetRoles(5)
-          document.getElementById("queryTable").style.display = "block";
+          document.getElementById("ShiftTable").style.display = "block";
     
     
         }
@@ -263,12 +269,12 @@
       if (unique[i].includes("Role")) {
 
       } else {
-        $('#queryTable > tbody:last-child').append('<tr><td>' + unique[i] + '</td><td> ' + CountShifts(unique[i]) + '</td><td> ' + percentage(CountShifts(unique[i]), rowCount) + '</td></tr>');
+        $('#ShiftTable > tbody:last-child').append('<tr><td>' + unique[i] + '</td><td> ' + CountShifts(unique[i]) + '</td><td> ' + percentage(CountShifts(unique[i]), rowCount) + '</td></tr>');
       }
 
     }
 
-    $('#queryTable > tbody:last-child').append('<tr><td>Total Shifts</td><td> ' + rowCount + '</td><td></td></tr>');
+    $('#ShiftTable > tbody:last-child').append('<tr><td>Total Shifts</td><td> ' + rowCount + '</td><td></td></tr>');
 
   }
     
