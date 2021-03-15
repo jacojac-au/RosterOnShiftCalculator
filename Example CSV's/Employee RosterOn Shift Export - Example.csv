@@ -1,0 +1,8 @@
+Date,Shift,Start,Finish,Oncall From,Oncall To,Area,Role,Status
+29/4/20 0:00,Melbourne-04:10-12:10,29/4/20 4:10,29/4/20 12:10,,,Melbourne Office,Coding Level 1,Payroll Processed
+30/4/20 0:00,Melbourne-12:25-20:25,30/4/20 12:25,30/4/20 20:25,,,Melbourne Office,Coding Level 1,Payroll Processed
+1/5/20 0:00,Melbourne-12:25-20:25,1/5/20 12:25,1/5/20 20:25,,,Melbourne Office,Coding Level 1,Payroll Processed
+6/5/20 0:00,A/Leave,6/5/20 17:25,7/5/20 1:25,,,Melbourne Office,Coding Level 1,Payroll Processed
+7/5/20 0:00,Sydney-12:25-20:25,7/5/20 12:00,7/5/20 20:00,,,Sydney Office,Coding Level 2,Payroll Processed
+8/5/20 0:00,Sydney-12:25-20:25,8/5/20 12:00,8/5/20 20:00,,,Sydney Office,Coding Level 2,Payroll Processed
+11/5/20 0:00,Sydney-06:00-10:15,11/5/20 6:00,11/5/20 14:00,,,Sydney Office,Coding Level 3,Payroll Processed
