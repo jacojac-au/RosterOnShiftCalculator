@@ -89,21 +89,41 @@
 
   </div>
 
-  <table class="table table-hover" style="display: none;" id="ShiftTable">
-    <thead>
-      <tr>
-        <th>Shift Type</th>
-        <th>Count</th>
-        <th>Percentage</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-      </tr>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="row">
+    <div class="col-sm-4"><table class="table table-hover" style="display: none;" id="ShiftTable">
+      <thead>
+        <tr>
+          <th>Shift Type</th>
+          <th>Count</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+      </tbody>
+    </table></div>
+    <div class="col-sm-4"><table class="table table-hover" style="display: none;" id="LocationTable">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Count</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+      </tbody>
+    </table></div>
+    <div class="col-sm-4"></div>
+  </div>
+
   
   <div class="row" <div class="row" id="parsed_csv_list">
   </div>
@@ -186,7 +206,9 @@
     
           document.getElementById("Upload").remove();
           GetRoles(8)
+          GetLocations(7)
           document.getElementById("ShiftTable").style.display = "block";
+          document.getElementById("LocationTable").style.display = "block";
     
     
         }
@@ -275,6 +297,39 @@
     }
 
     $('#ShiftTable > tbody:last-child').append('<tr><td>Total Shifts</td><td> ' + rowCount + '</td><td></td></tr>');
+
+  }
+
+
+  function GetLocations(Row) {
+    
+    n = Row
+
+    var rowCount = $("#csv_list tr").length  - 1
+
+    var data = [],
+      i,
+      yourSelect,
+      unique;
+
+    $("#csv_list tr td:nth-child(" + n + ")").each(function () {
+      data.push($(this).text());
+    });
+
+    unique = data.filter(function (item, i, arr) {
+      return i == arr.indexOf(item);
+    });
+
+    yourSelect = $('#yourSelect');
+    for (i = 0; i < unique.length; i += 1) {
+
+      if (unique[i].includes("Area")) {
+
+      } else {
+        $('#LocationTable > tbody:last-child').append('<tr><td>' + unique[i] + '</td><td> ' + CountShifts(unique[i]) + '</td><td> ' + percentage(CountShifts(unique[i]), rowCount) + '</td></tr>');
+      }
+
+    }
 
   }
     
