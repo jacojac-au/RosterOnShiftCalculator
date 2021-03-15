@@ -125,7 +125,7 @@
           $('#files').parse({
             config: {
               delimiter: "auto",
-              complete: displayHTMLTable,
+              complete: displayHTMLTableEmployee,
             },
             before: function (file, inputElem) {
               //console.log("Parsing file...", file);
@@ -161,7 +161,7 @@
     
     })
     
-        function displayHTMLTable(results) {
+        function displayHTMLTableEmployee(results) {
           var table = "<table id='csv_list' class='table'>";
           var data = results.data;
     
